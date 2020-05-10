@@ -3,6 +3,7 @@ import { MainLayoutComponent } from './shared/components/main-layout/main-layout
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { PostsPageComponent } from './posts-page/posts-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 
 const routes: Routes = [
@@ -10,7 +11,8 @@ const routes: Routes = [
     path: '', component: MainLayoutComponent, children: [
       {path: '', redirectTo: '/', pathMatch: 'full'},
       {path: '', component: HomePageComponent},
-      {path: 'Posts', component: PostsPageComponent}
+      {path: 'Posts', component: PostsPageComponent},
+      {path: 'Login', component: LoginPageComponent}
     ]
   }
 ];
