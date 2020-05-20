@@ -1,4 +1,4 @@
-import { AdminPageComponent } from './../admin-page/admin-page.component';
+import { AdminPageComponent } from '../admin-page/admin-page.component';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 

@@ -7,10 +7,11 @@ import { MainLayoutComponent } from './shared/components/main-layout/main-layout
 import { HomePageComponent } from './home-page/home-page.component';
 import { PostsPageComponent } from './posts-page/posts-page.component';
 import { PostComponent } from './shared/components/post/post.component';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { AdminPageComponent } from './admin-page/admin-page.component';
+import { AdminPageComponent } from './admin/admin-page/admin-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostPageComponent } from './posts-page/post-page/post-page.component';
+import { SharedModule } from './shared/module/shared.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,14 +19,14 @@ import { PostPageComponent } from './posts-page/post-page/post-page.component';
     HomePageComponent,
     PostsPageComponent,
     PostComponent,
-    LoginPageComponent,
     AdminPageComponent,
     PostPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

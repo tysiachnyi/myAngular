@@ -1,4 +1,4 @@
-import { PostsService } from './../shared/services/posts.service';
+import { PostsService } from '../../shared/services/posts.service';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
