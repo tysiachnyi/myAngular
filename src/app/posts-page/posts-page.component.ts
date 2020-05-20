@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from '../shared/services/posts.service'
-import { Observable } from 'rxjs'
+import { PostsService } from '../shared/services/posts.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-posts-page',
@@ -16,7 +16,8 @@ export class PostsPageComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-      this.posts$ = this.postsService.getAll()
+      this.posts$ = this.postsService.getAll();
+      console.log(this.posts$);
   }
 
 }

@@ -1,1 +1,36 @@
-<p>admin-page works!</p>
+<div *ngIf="posts$ | async as posts; else loading">
+  <div class="collection">
+    <a class="collection-item" *ngFor="let post of posts">
+      <span class="badge">
+        <a href="#" style="margin-right: 10px;"><i class="material-icons">create</i></a>
+        <a href="#"><i class="material-icons" style="color: red;">delete</i></a>
+      </span>{{post.id + '  ' +post.title}}
+    </a>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="center-align" style="margin-top: 30px;">
+  <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</ng-template>
+
+
+
+
+
+
+
+
+
+

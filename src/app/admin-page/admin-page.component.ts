@@ -1,3 +1,5 @@
+import { PostsService } from './../shared/services/posts.service';
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminPageComponent implements OnInit {
 
-  constructor() { }
+  posts$: Observable<any>;
+  constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
+    this.posts$ = this.postsService.getAll();
   }
 
 }
