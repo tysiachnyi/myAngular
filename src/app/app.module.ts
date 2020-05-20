@@ -10,6 +10,7 @@ import { PostComponent } from './shared/components/post/post.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PostPageComponent } from './posts-page/post-page/post-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     PostsPageComponent,
     PostComponent,
     LoginPageComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    PostPageComponent
   ],
   imports: [
     BrowserModule,

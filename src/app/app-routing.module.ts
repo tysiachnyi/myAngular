@@ -1,3 +1,4 @@
+import { PostPageComponent } from './posts-page/post-page/post-page.component';
 import { PostComponent } from './shared/components/post/post.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
       {path: '', redirectTo: '/', pathMatch: 'full'},
       {path: '', component: HomePageComponent},
       {path: 'Posts', component: PostsPageComponent},
+      {path: 'Posts/:id', component: PostPageComponent},
       {path: 'Login', component: LoginPageComponent},
       {path: 'Admin', component: AdminPageComponent}
     ]
