@@ -1,4 +1,4 @@
-import { PostComponent } from './posts-page/post-page/post.component';
+import { PostComponent } from './shared/components/post/post.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { NgModule } from '@angular/core';
@@ -14,7 +14,6 @@ const routes: Routes = [
       {path: '', redirectTo: '/', pathMatch: 'full'},
       {path: '', component: HomePageComponent},
       {path: 'Posts', component: PostsPageComponent},
-      {path: 'Posts/:id', component: PostComponent},
       {path: 'Login', component: LoginPageComponent},
       {path: 'Admin', component: AdminPageComponent}
     ]

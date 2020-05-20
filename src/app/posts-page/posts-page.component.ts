@@ -17,7 +17,6 @@ export class PostsPageComponent implements OnInit {
 
   ngOnInit(): void {
       this.posts$ = this.postsService.getAll();
-      console.log(this.posts$);
   }
 
 }
