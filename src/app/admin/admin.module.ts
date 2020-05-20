@@ -7,6 +7,8 @@ import {SharedModule} from '../shared/module/shared.module';
 import {AdminLayoutComponent} from './../shared/components/admin-layout/admin-layout.component';
 import {LoginPageComponent} from './login-page/login-page.component';
 import {AdminPageComponent} from './admin-page/admin-page.component';
+import {PostPageEditComponent} from './post-page-edit/post-page-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -21,9 +23,10 @@ import {AdminPageComponent} from './admin-page/admin-page.component';
     RouterModule.forChild([
       {
         path: '', component: AdminLayoutComponent, children: [
-          {path: '', redirectTo: '/Admin/Login', pathMatch: 'full'},
-          {path: 'Login', component: LoginPageComponent},
-          {path: 'Dashboard', component: AdminPageComponent}
+          {path: '', redirectTo: '/admin/login', pathMatch: 'full'},
+          {path: 'login', component: LoginPageComponent},
+          {path: 'dashboard', component: AdminPageComponent},
+          {path: 'post/:id/edit', component: PostPageEditComponent}
         ]
       }
     ])
