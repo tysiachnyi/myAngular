@@ -1,17 +1,46 @@
 <br>
-<div class="center-align">
-    <div class="input-field inline">
-      <input id="login" type="email" class="validate">
-      <label for="login">Login</label>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="center-align">
+      <div class="input-field inline">
+        <input id="login" type="email" class="validate" formControlName="email">
+        <label for="login">Email</label>
+      </div>
+      <div
+      *ngIf="form.get('email').touched && form.get('email').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('email').errors.required">
+        Введите поле email
+      </small>
+      <small *ngIf="form.get('email').errors.email">
+        Поле email должно быть email
+      </small>
     </div>
-    <br>
-    <div class="input-field inline">
-      <input id="password" type="password" class="validate">
-      <label for="password">Password</label>
+      <br>
+      <div class="input-field inline">
+        <input id="password" type="password"  formControlName="password">
+        <label for="password">Password</label>
+      </div>
+      <div
+      style="margin-bottom: 20px;"
+      class="validation"
+      *ngIf="form.get('password').touched && form.get('password').invalid"
+    >
+      <small *ngIf="form.get('password').errors.required">
+        Введите пароль
+      </small>
+      <small *ngIf="form.get('password').errors.minlength">
+        Пароль должен быть не менее
+        {{form.get('password').errors.minlength.requiredLength}}
+        символов. Сейчас он
+        {{form.get('password').errors.minlength.actualLength}}
+        символа.
+      </small>
     </div>
-    <div>
-      <button class="btn waves-effect waves-light" type="submit" name="action" (click)="checkLogin()">
-        <i class="material-icons">check</i>
-      </button>
-    </div>
-</div>
+      <div>
+        <button class="btn waves-effect waves-light" type="submit" name="action" (click)="checkLogin()">
+          <i class="material-icons">check</i>
+        </button>
+      </div>
+  </div>
+</form>
