@@ -1,6 +1,6 @@
 import { AdminPageComponent } from '../admin-page/admin-page.component';
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import {AuthService} from 'src/app/shared/services/auth.service';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {User} from 'src/app/shared/interfaces';
@@ -23,6 +23,16 @@ export class LoginPageComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+
+    this.route.queryParams.subscribe((params: Params) => {
+      if (params.loginAgain) {
+        this.message = 'Пожалуйста, введите данные';
+      } else if (params.authFailed) {
+        this.message = 'Сессия истекла. Введите данные заного';
+      }
+    })
+
+
     this.form = new FormGroup({
       email: new FormControl(null, [
         Validators.required,

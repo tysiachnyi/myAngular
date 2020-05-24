@@ -16,9 +16,7 @@ import { SharedModule } from './shared/module/shared.module';
     AppComponent,
     MainLayoutComponent,
     PostsPageComponent,
-    PostComponent,
-    AdminPageComponent,
-    PostPageComponent
+    PostComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,9 @@
 export interface Post {
-  userId: number;
-  id: number;
+  id?: string;
   title: string;
-  body: string;
+  text: string;
+  author: string;
+  date: Date;
 }
 
 export interface User {
