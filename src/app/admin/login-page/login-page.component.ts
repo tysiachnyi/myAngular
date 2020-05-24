@@ -19,7 +19,7 @@ export class LoginPageComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private auth: AuthService
+    public auth: AuthService
     ) { }
 
   ngOnInit(): void {
@@ -55,6 +55,8 @@ export class LoginPageComponent implements OnInit {
     this.auth.login(user).subscribe( () => {
       this.form.reset();
       this.router.navigate(['/admin', 'dashboard']);
+      this.submitted = false;
+    }, () => {
       this.submitted = false;
     });
 
