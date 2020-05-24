@@ -10,3 +10,13 @@ export interface User {
   password: string;
   returnSecureToken?: boolean;
 }
+
+export interface Environment {
+  apiKey: string;
+  production: boolean;
+}
+
+export interface FbAuthRespone {
+  idToken: string;
+  expiresIn: string;
+}

@@ -8,6 +8,7 @@ import {AdminLayoutComponent} from './../shared/components/admin-layout/admin-la
 import {LoginPageComponent} from './login-page/login-page.component';
 import {AdminPageComponent} from './admin-page/admin-page.component';
 import {PostPageEditComponent} from './post-page-edit/post-page-edit.component';
+import {AuthService} from '../shared/services/auth.service';
 
 
 @NgModule({
