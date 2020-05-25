@@ -1,15 +1,15 @@
-import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {RouterModule} from '@angular/router';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import {SharedModule} from '../shared/module/shared.module';
-import {AdminLayoutComponent} from './../shared/components/admin-layout/admin-layout.component';
-import {LoginPageComponent} from './login-page/login-page.component';
-import {AdminPageComponent} from './admin-page/admin-page.component';
-import {PostPageEditComponent} from './post-page-edit/post-page-edit.component';
-import {AuthGuard} from '../shared/services/auth.guard';
-import {CreatePageComponent} from './create-page/create-page.component';
+import { SharedModule } from '../shared/module/shared.module';
+import { AdminLayoutComponent } from '../shared/components/admin-layout/admin-layout.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+import { PostPageEditComponent } from './post-page-edit/post-page-edit.component';
+import { AuthGuard } from '../shared/services/auth.guard';
+import { CreatePageComponent } from './create-page/create-page.component';
 
 
 @NgModule({
