@@ -1,8 +1,25 @@
-<form action="">
-  <h3>
-    Создание нового поста
-  </h3>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="center-align">
+    <h4>
+      Create new post
+    </h4>
+  </div>
 
+  <div class="input-field">
+    <input id="title" type="text">
+    <label for="title">Title</label>
+  </div>
+
+  <br>
   <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
+  <br>
+  <div class="input-field">
+    <input id="author" type="text">
+    <label for="author">Author</label>
+  </div>
+  <br>
+  <div class="center-align">
+    <button class="btn">Create new post</button>
+  </div>
 
 </form>
