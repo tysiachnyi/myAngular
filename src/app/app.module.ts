@@ -8,12 +8,14 @@ import { PostsPageComponent } from './posts-page/posts-page.component';
 import { PostComponent } from './shared/components/post/post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/module/shared.module';
+import { PostPageComponent } from './posts-page/post-page/post-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainLayoutComponent,
     PostsPageComponent,
+    PostPageComponent,
     PostComponent
   ],
   imports: [

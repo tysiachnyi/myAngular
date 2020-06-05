@@ -1,18 +1,38 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
+import { Post } from '../interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostsService {
 
-  jsonUrl = 'http://jsonplaceholder.typicode.com/posts';
+  jsonUrl = 'http://jsonplaceholder.typicode.com/posts?_page=1&_limit=10';
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<any> {
-    return this.http.get(this.jsonUrl);
+  getAll(): Observable<Post[]> {
+    return this.http.get(this.jsonUrl)
+      .pipe(map((response: {[key: string]: any}) => {
+        return Object
+          .keys(response)
+          .map(key => ({
+            ...response[key],
+            id: key,
+            date: new Date(response[key].date)
+          }));
+      }));
+  }
+
+  getById(id: string): Observable<Post> {
+    return this.http.get(this.jsonUrl)
+      .pipe(map((post: Post) => {
+        return {
+          ...post, id,
+          date: new Date(post.date)
+        };
+      }));
   }
 }
