@@ -9,7 +9,8 @@ import { Post } from '../interfaces';
 })
 export class PostsService {
 
-  jsonUrl = 'http://jsonplaceholder.typicode.com/posts?_page=1&_limit=10';
+  jsonUrl = 'http://jsonplaceholder.typicode.com/posts';
+
 
   constructor(private http: HttpClient) { }
 
@@ -27,7 +28,8 @@ export class PostsService {
   }
 
   getById(id: string): Observable<Post> {
-    return this.http.get(this.jsonUrl)
+    console.log(`${this.jsonUrl}/${id}.json`);
+    return this.http.get(`${this.jsonUrl}/${id}`)
       .pipe(map((post: Post) => {
         return {
           ...post, id,
