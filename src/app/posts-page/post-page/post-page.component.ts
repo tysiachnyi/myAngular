@@ -24,15 +24,6 @@ export class PostPageComponent implements OnInit {
       .pipe(switchMap((params: Params) => {
         return this.postsService.getById(params.id);
       }));
-    this.post$.subscribe(
-      (res) => {
-        if (res.userId <= 5) {
-          this.userId = 'Nikita Tysiachnyi';
-        } else {
-          this.userId = 'Anonymous author';
-        }
-      }
-    );
   }
 
 }

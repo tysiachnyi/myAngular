@@ -3,19 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Post } from '../interfaces';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostsService {
 
-  jsonUrl = 'http://jsonplaceholder.typicode.com/posts';
-
-
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Post[]> {
-    return this.http.get(this.jsonUrl)
+    return this.http.get(`${environment.fbDbUrl}/posts.json`)
       .pipe(map((response: {[key: string]: any}) => {
         return Object
           .keys(response)
@@ -28,8 +26,7 @@ export class PostsService {
   }
 
   getById(id: string): Observable<Post> {
-    console.log(`${this.jsonUrl}/${id}.json`);
-    return this.http.get(`${this.jsonUrl}/${id}`)
+    return this.http.get<Post>(`${environment.fbDbUrl}/posts/${id}.json`)
       .pipe(map((post: Post) => {
         return {
           ...post, id,

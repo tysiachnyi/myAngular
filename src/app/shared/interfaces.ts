@@ -1,8 +1,8 @@
 export interface Post {
-  id?: string | number;
+  id?: string;
   title: string;
-  body: string;
-  userId: string | number;
+  text: string;
+  author: string;
   date: Date;
 }
 
@@ -15,6 +15,7 @@ export interface User {
 export interface Environment {
   apiKey: string;
   production: boolean;
+  fbDbUrl: string;
 }
 
 export interface FbAuthRespone {
