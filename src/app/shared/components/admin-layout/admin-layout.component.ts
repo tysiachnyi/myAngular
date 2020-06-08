@@ -23,4 +23,8 @@ export class AdminLayoutComponent implements OnInit {
     this.router.navigate(['/admin', 'login']);
   }
 
+  newMethod() {
+    console.log('how are you guys did you drink water tonight? ');
+  }
+
 }

@@ -22,6 +22,7 @@
     "@ckeditor/ckeditor5-angular": "^1.2.3",
     "@ckeditor/ckeditor5-build-balloon-block": "^19.0.1",
     "@ckeditor/ckeditor5-build-classic": "^19.0.0",
+    "fsevents": "^2.1.3",
     "hammerjs": "^2.0.8",
     "jquery": "^3.5.1",
     "materialize-css": "^1.0.0",

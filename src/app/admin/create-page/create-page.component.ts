@@ -33,22 +33,6 @@ export class CreatePageComponent implements OnInit {
       return;
     }
 
-    // if (this.authorCheckBox.nativeElement.checked) {
-    //    const post: Post = {
-    //     title: this.form.value.title,
-    //     author: 'anonymous',
-    //     text: this.form.value.text,
-    //     date: new Date()
-    //   };
-    // } else  {
-    //   const post: Post = {
-    //     title: this.form.value.title,
-    //     author: this.form.value.author,
-    //     text: this.form.value.text,
-    //     date: new Date()
-    //   };
-    // }
-
     const { title, author, text } = this.form.value;
     const post: Post = {
       title,

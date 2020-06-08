@@ -16,7 +16,7 @@
   <p>
     <label>
       <input (click)="checkSome()" #authorCheckBox  type="checkbox"/>
-      <span>Add post anonymous? </span>
+      <span>Add post anonymous?</span>
     </label>
   </p>
   <div *ngIf="!this.authorCheckBox.checked" #postAuthor class="input-field">
