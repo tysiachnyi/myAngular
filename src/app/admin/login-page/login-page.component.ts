@@ -1,4 +1,3 @@
-import { AdminPageComponent } from '../admin-page/admin-page.component';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import {AuthService} from 'src/app/shared/services/auth.service';
@@ -30,7 +29,7 @@ export class LoginPageComponent implements OnInit {
       } else if (params.authFailed) {
         this.message = 'Сессия истекла. Введите данные заного';
       }
-    })
+    });
 
 
     this.form = new FormGroup({
@@ -69,10 +68,6 @@ export class LoginPageComponent implements OnInit {
     }, () => {
       this.submitted = false;
     });
-
-
-
-
   }
 
 }

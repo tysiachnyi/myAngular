@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {User, FbAuthRespone} from '../interfaces';
+import {User, FbAuthResponse} from '../interfaces';
 import {Observable, throwError, Subject} from 'rxjs';
 import {environment} from 'src/environments/environment';
 import {tap, catchError} from 'rxjs/operators';
@@ -56,7 +56,7 @@ export class AuthService {
 
   }
 
-  private setToken(response: FbAuthRespone | null) {
+  private setToken(response: FbAuthResponse | null) {
     if (response) {
       const expDate = new Date(new Date().getTime() + +response.expiresIn * 1000);
       localStorage.setItem('fb-token', response.idToken);

@@ -4,7 +4,7 @@
       <span class="badge">
         <a [routerLink]="['/admin', 'post', post.id, 'edit']" style="margin-right: 10px;"><i class="material-icons">create</i></a>
         <a href="#"><i class="material-icons" style="color: red;">delete</i></a>
-      </span>{{'|ID: ' + post.id + '| ' + post.title}}
+      </span>{{post.title + ' by ' + post.author}}
     </a>
   </div>
 </div>

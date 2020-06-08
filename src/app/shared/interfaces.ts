@@ -18,7 +18,11 @@ export interface Environment {
   fbDbUrl: string;
 }
 
-export interface FbAuthRespone {
+export interface FbAuthResponse {
   idToken: string;
   expiresIn: string;
+}
+
+export interface FbCreateResponse {
+  name: string;
 }

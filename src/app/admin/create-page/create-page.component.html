@@ -6,15 +6,15 @@
   </div>
 
   <div class="input-field">
-    <input id="title" type="text">
+    <input formControlName="title" id="title" type="text">
     <label for="title">Title</label>
   </div>
 
   <br>
-  <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
+  <ckeditor formControlName="text" [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
   <br>
   <div class="input-field">
-    <input id="author" type="text">
+    <input id="author" formControlName="author" type="text">
     <label for="author">Author</label>
   </div>
   <br>
