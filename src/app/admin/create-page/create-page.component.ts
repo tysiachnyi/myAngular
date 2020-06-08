@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {PostsService} from 'src/app/shared/services/posts.service';
 import {Post} from 'src/app/shared/interfaces';
@@ -12,13 +12,13 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 })
 export class CreatePageComponent implements OnInit {
   form: FormGroup;
+  @ViewChild('authorCheckBox') authorCheckBox: ElementRef;
   public Editor = ClassicEditor;
 
   constructor(
     private postsService: PostsService,
     private alert: AlertService
-  ) {
-  }
+  ) {}
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -33,10 +33,27 @@ export class CreatePageComponent implements OnInit {
       return;
     }
 
+    // if (this.authorCheckBox.nativeElement.checked) {
+    //    const post: Post = {
+    //     title: this.form.value.title,
+    //     author: 'anonymous',
+    //     text: this.form.value.text,
+    //     date: new Date()
+    //   };
+    // } else  {
+    //   const post: Post = {
+    //     title: this.form.value.title,
+    //     author: this.form.value.author,
+    //     text: this.form.value.text,
+    //     date: new Date()
+    //   };
+    // }
+
+    const { title, author, text } = this.form.value;
     const post: Post = {
-      title: this.form.value.title,
-      author: this.form.value.author,
-      text: this.form.value.text,
+      title,
+      text,
+      author: this.authorCheckBox.nativeElement.checked ? 'anonymous' : author,
       date: new Date()
     };
 
@@ -45,4 +62,7 @@ export class CreatePageComponent implements OnInit {
     });
   }
 
+  checkSome() {
+    console.log(this.authorCheckBox.nativeElement.checked);
+  }
 }

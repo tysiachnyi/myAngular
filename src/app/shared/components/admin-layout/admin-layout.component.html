@@ -2,6 +2,7 @@
   <div class="nav-wrapper">
     <a routerLink="/admin/dashboard" class="brand-logo">Angular Admin App</a>
     <ul id="nav-mobile" class="right hide-on-small-and-down" *ngIf="auth.isAuthenticated()">
+      <li><a [routerLink]="['/']">Back to main</a></li>
       <li><a [routerLink]="['/admin', 'create']">Create post</a></li>
       <li><a (click)="logout($event)">Logout</a></li>
     </ul>
