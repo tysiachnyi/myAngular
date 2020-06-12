@@ -3,7 +3,7 @@
     <a class="collection-item" *ngFor="let post of posts">
       <span class="badge">
         <a [routerLink]="['/admin', 'post', post.id, 'edit']" style="margin-right: 10px;"><i class="material-icons">create</i></a>
-        <a href="#"><i class="material-icons" style="color: red;">delete</i></a>
+        <a [routerLink]="" (click)="delete(post)"><i class="material-icons" style="color: red;">delete</i></a>
       </span>{{post.title + ' by ' + post.author}}
     </a>
   </div>

@@ -22,4 +22,10 @@ export class AdminPageComponent implements OnInit {
     });
   }
 
+  delete(post: Post) {
+    this.dSub = this.postsService.delete(post).subscribe(() => {
+      this.posts = this.posts.filter(posts => posts.id !== post.id);
+    });
+
+  }
 }
