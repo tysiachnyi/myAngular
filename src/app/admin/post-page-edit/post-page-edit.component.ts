@@ -69,9 +69,4 @@ export class PostPageEditComponent implements OnInit, AfterContentInit,  OnDestr
     });
   }
 
-  check() {
-    this.title.nativeElement.
-    document.getElementsByTagName('input')[0].click();
-  }
-
 }
