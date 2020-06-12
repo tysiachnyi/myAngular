@@ -1,25 +1,24 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
-  <div class="center-align">
-    <h4>
-      Edit post
-    </h4>
-  </div>
+<div *ngIf="form; else loading">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="center-align">
+      <h4> Edit post</h4>
+    </div>
 
-  <div class="input-field">
-    <input id="title" type="text">
-    <label for="title">Title</label>
-  </div>
+    <div class="input-field">
+      <input class="validate" formControlName="title" id="title" type="text" #title>
+    </div>
+    <br>
+    <ckeditor formControlName="text" [editor]="Editor"></ckeditor>
+    <br>
 
-  <br>
-  <ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
-  <br>
-  <div class="input-field">
-    <input id="author" type="text">
-    <label for="author">Author</label>
-  </div>
-  <br>
-  <div class="center-align">
-    <button class="btn">Edit</button>
-  </div>
+    <br>
+    <div class="center-align">
+      <button  class="btn">Edit post</button>
+    </div>
+    <button (click)="check()">check</button>
+  </form>
+</div>
 
-</form>
+<ng-template #loading>
+  <p class="text-center">Идет загрузка...</p>
+</ng-template>

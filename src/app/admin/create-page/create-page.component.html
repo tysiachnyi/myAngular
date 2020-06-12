@@ -9,16 +9,17 @@
     <input formControlName="title" id="title" type="text">
     <label for="title">Title</label>
   </div>
+  <br>
+  <ckeditor formControlName="text" [editor]="Editor"></ckeditor>
+  <br>
 
-  <br>
-  <ckeditor formControlName="text" [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
-  <br>
   <p>
     <label>
       <input (click)="checkSome()" #authorCheckBox  type="checkbox"/>
       <span>Add post anonymous?</span>
     </label>
   </p>
+
   <div *ngIf="!this.authorCheckBox.checked" #postAuthor class="input-field">
     <input id="author" formControlName="author" type="text">
     <label for="author">Author</label>

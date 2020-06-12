@@ -1,8 +1,8 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
-import {PostsService} from 'src/app/shared/services/posts.service';
-import {Post} from 'src/app/shared/interfaces';
-import {AlertService} from 'src/app/shared/services/alert.service';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { PostsService } from 'src/app/shared/services/posts.service';
+import { Post } from 'src/app/shared/interfaces';
+import { AlertService } from 'src/app/shared/services/alert.service';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
@@ -33,11 +33,11 @@ export class CreatePageComponent implements OnInit {
       return;
     }
 
-    const { title, author, text } = this.form.value;
+    // const { title, author, text } = this.form.value;
     const post: Post = {
-      title,
-      text,
-      author: this.authorCheckBox.nativeElement.checked ? 'anonymous' : author,
+      title: this.form.value.title,
+      text: this.form.value.text,
+      author: this.authorCheckBox.nativeElement.checked ? 'anonymous' : this.form.value.author,
       date: new Date()
     };
 
